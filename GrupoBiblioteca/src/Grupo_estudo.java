@@ -1,8 +1,79 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-public class Grupo_estudo {
+@Entity
+public class Grupo_estudo implements Identificavel {
 
+	@Id
 	private Long id;
 	private int horario;
 	private String nome_responsavel;
 	private int quantidade_alunos;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getHorario() {
+		return horario;
+	}
+	public void setHorario(int horario) {
+		this.horario = horario;
+	}
+	public String getNome_responsavel() {
+		return nome_responsavel;
+	}
+	public void setNome_responsavel(String nome_responsavel) {
+		this.nome_responsavel = nome_responsavel;
+	}
+	public int getQuantidade_alunos() {
+		return quantidade_alunos;
+	}
+	public void setQuantidade_alunos(int quantidade_alunos) {
+		this.quantidade_alunos = quantidade_alunos;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + horario;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nome_responsavel == null) ? 0 : nome_responsavel.hashCode());
+		result = prime * result + quantidade_alunos;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Grupo_estudo other = (Grupo_estudo) obj;
+		if (horario != other.horario)
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nome_responsavel == null) {
+			if (other.nome_responsavel != null)
+				return false;
+		} else if (!nome_responsavel.equals(other.nome_responsavel))
+			return false;
+		if (quantidade_alunos != other.quantidade_alunos)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Grupo_estudo [id=" + id + ", horario=" + horario + ", nome_responsavel=" + nome_responsavel
+				+ ", quantidade_alunos=" + quantidade_alunos + "]";
+	}
+	
+	
+	
 }
