@@ -8,7 +8,8 @@ public class Grupo_estudo implements Identificavel {
 	private Long id;
 	private int horario;
 	private String nome_responsavel;
-	private int quantidade_alunos;
+	private String tema_estudo;
+	private int dias_reuniao;
 	public Long getId() {
 		return id;
 	}
@@ -27,12 +28,7 @@ public class Grupo_estudo implements Identificavel {
 	public void setNome_responsavel(String nome_responsavel) {
 		this.nome_responsavel = nome_responsavel;
 	}
-	public int getQuantidade_alunos() {
-		return quantidade_alunos;
-	}
-	public void setQuantidade_alunos(int quantidade_alunos) {
-		this.quantidade_alunos = quantidade_alunos;
-	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,7 +36,7 @@ public class Grupo_estudo implements Identificavel {
 		result = prime * result + horario;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome_responsavel == null) ? 0 : nome_responsavel.hashCode());
-		result = prime * result + quantidade_alunos;
+		
 		return result;
 	}
 	@Override
@@ -64,14 +60,12 @@ public class Grupo_estudo implements Identificavel {
 				return false;
 		} else if (!nome_responsavel.equals(other.nome_responsavel))
 			return false;
-		if (quantidade_alunos != other.quantidade_alunos)
-			return false;
-		return true;
+				return true;
 	}
 	@Override
 	public String toString() {
 		return "Grupo_estudo [id=" + id + ", horario=" + horario + ", nome_responsavel=" + nome_responsavel
-				+ ", quantidade_alunos=" + quantidade_alunos + "]";
+				+ ", quantidade_alunos=" + "]";
 	}
 	
 	
