@@ -7,7 +7,7 @@ public class Livro implements Identificavel{
 	@Id
 	private Long id;
 	private int isbn;
-	private int ano_nascimento;
+	private int ano_lancamento;
 	private String titulo;
 	private String autor;
 	public Long getId() {
@@ -22,11 +22,11 @@ public class Livro implements Identificavel{
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
-	public int getAno_nascimento() {
-		return ano_nascimento;
+	public int getAno_lancamento() {
+		return ano_lancamento;
 	}
-	public void setAno_nascimento(int ano_nascimento) {
-		this.ano_nascimento = ano_nascimento;
+	public void setAno_lancamento(int ano_lancamento) {
+		this.ano_lancamento = ano_lancamento;
 	}
 	public String getTitulo() {
 		return titulo;
@@ -44,7 +44,7 @@ public class Livro implements Identificavel{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ano_nascimento;
+		result = prime * result + ano_lancamento;
 		result = prime * result + ((autor == null) ? 0 : autor.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + isbn;
@@ -60,7 +60,7 @@ public class Livro implements Identificavel{
 		if (getClass() != obj.getClass())
 			return false;
 		Livro other = (Livro) obj;
-		if (ano_nascimento != other.ano_nascimento)
+		if (ano_lancamento != other.ano_lancamento)
 			return false;
 		if (autor == null) {
 			if (other.autor != null)
@@ -83,9 +83,10 @@ public class Livro implements Identificavel{
 	}
 	@Override
 	public String toString() {
-		return "Livro [id=" + id + ", isbn=" + isbn + ", ano_nascimento=" + ano_nascimento + ", titulo=" + titulo
+		return "Livro [id=" + id + ", isbn=" + isbn + ", ano_lancamento=" + ano_lancamento + ", titulo=" + titulo
 				+ ", autor=" + autor + "]";
-	}	
+	}
+	
 	
 	
 }
