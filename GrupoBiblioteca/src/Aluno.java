@@ -76,5 +76,5 @@ public class Aluno implements Identificavel {
 		return "Aluno [id=" + id + ", nome=" + nome + ", data_nascimento=" + data_nascimento + ", cpf=" + cpf + "]";
 	}
 	
-	
+ 
 }
