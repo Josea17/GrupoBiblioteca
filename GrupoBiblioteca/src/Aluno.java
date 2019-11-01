@@ -7,7 +7,7 @@ public class Aluno implements Identificavel {
 	@Id
 	private Long id;
 	private String nome;
-	private int data_nascimento;
+	private int dataNascimento;
 	private String cpf;
 	public Long getId() {
 		return id;
@@ -21,11 +21,11 @@ public class Aluno implements Identificavel {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getData_nascimento() {
-		return data_nascimento;
+	public int getDataNascimento() {
+		return dataNascimento;
 	}
-	public void setData_nascimento(int data_nascimento) {
-		this.data_nascimento = data_nascimento;
+	public void setDataNascimento(int dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	public String getCpf() {
 		return cpf;
@@ -38,7 +38,7 @@ public class Aluno implements Identificavel {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + data_nascimento;
+		result = prime * result + dataNascimento;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
@@ -57,7 +57,7 @@ public class Aluno implements Identificavel {
 				return false;
 		} else if (!cpf.equals(other.cpf))
 			return false;
-		if (data_nascimento != other.data_nascimento)
+		if (dataNascimento != other.dataNascimento)
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -71,10 +71,7 @@ public class Aluno implements Identificavel {
 			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "Aluno [id=" + id + ", nome=" + nome + ", data_nascimento=" + data_nascimento + ", cpf=" + cpf + "]";
-	}
+	
 	
  
 }
