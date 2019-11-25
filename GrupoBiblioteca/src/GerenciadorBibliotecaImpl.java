@@ -102,8 +102,13 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 	public GrupoEstudo cadastrarGrupoEstudo(Long id, String nomeResponsavel, String temaEstudo, int diasReuniao)
 			throws IdInvalidoException, TemaEstudoInvalidoException, DiasReuniaoInvalidoException,
 			NomeInvalidoException {
-		// TODO Auto-generated method stub
-		return null;
+		GrupoEstudo grupo = new GrupoEstudo();
+		grupo.setId(id);
+		grupo.setDiasReuniao(diasReuniao);
+		grupo.setNomeResponsavel(nomeResponsavel);
+		DAO<GrupoEstudo> dao = new DAO<GrupoEstudo>();
+		dao.save(grupo);
+		return grupo;
 	}
 
 
