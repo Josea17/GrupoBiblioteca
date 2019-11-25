@@ -9,6 +9,7 @@ public class GrupoEstudo implements Identificavel {
 	private int horario;
 	private String nomeResponsavel;
 	private String temaEstudo;
+
 	private int diasReuniao;
 	public Long getId() {
 		return id;
