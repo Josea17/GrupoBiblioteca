@@ -4,8 +4,13 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 	@Override
 	public Aluno cadastrarALuno(Long id, int data_nascimento, String cpf, String nome)
 			throws IdInvalidoException, CPFInvalidoException, data_nascimentoInvalidoException, NomeInvalidoException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Aluno aluno = new Aluno();
+		aluno.setId(id);
+		aluno.setDataNascimento(data_nascimento);
+		aluno.setCpf(cpf);
+		aluno.setNome(nome);
+		return aluno;
 	}
 
 	@Override
@@ -41,6 +46,14 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 
 	@Override
 	public Livro removeLivro(Long id, String titulo, String autor, int isbn, int data_lancamento)
+			throws IdInvalidoException, TituloInvalidoException, NomeInvalidoException, IsbnInvalidoException,
+			AnoLancamentoInvalidoException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Livro pesquisarLivro(Long id, String titulo, String autor, int isbn, int data_lancamento)
 			throws IdInvalidoException, TituloInvalidoException, NomeInvalidoException, IsbnInvalidoException,
 			AnoLancamentoInvalidoException {
 		// TODO Auto-generated method stub
