@@ -87,13 +87,10 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 	public Livro pesquisarLivro(Long id)
 			throws IdInvalidoException {
 		Livro livro = new Livro();
-		livro.getAnoLancamento();
-		livro.getAutor();
-		livro.getId();
 		livro.getTitulo();
-		livro.getIsbn();
+		
 		DAO<Livro> dao = new DAO<Livro>();
-		dao.find(null, id,);
+		dao.find(null, id);
 		return livro;
 	}
 
