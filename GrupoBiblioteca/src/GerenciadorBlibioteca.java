@@ -19,12 +19,11 @@ public interface GerenciadorBlibioteca {
 	public Livro removeLivro(Long id, String titulo, String autor, int isbn, int data_lancamento ) throws IdInvalidoException, 
 	TituloInvalidoException, NomeInvalidoException, IsbnInvalidoException, AnoLancamentoInvalidoException;
 	
-	public Livro pesquisarLivro(Long id, String titulo, String autor, int isbn, int data_lancamento ) throws IdInvalidoException, 
-	TituloInvalidoException, NomeInvalidoException, IsbnInvalidoException, AnoLancamentoInvalidoException;
-
 	GrupoEstudo cadastrarGrupoEstudo(Long id, String nomeResponsavel, String temaEstudo, int diasReuniao, String tema)
 			throws IdInvalidoException, TemaEstudoInvalidoException, DiasReuniaoInvalidoException,
 			NomeInvalidoException;
+
+	Livro pesquisarLivro(Long id) throws IdInvalidoException;
 	
 	
 	

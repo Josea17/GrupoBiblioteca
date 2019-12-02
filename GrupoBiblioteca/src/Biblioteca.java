@@ -1,5 +1,10 @@
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Biblioteca implements Identificavel {
@@ -53,5 +58,11 @@ public class Biblioteca implements Identificavel {
 		return "Biblioteca [id=" + id + ", nome=" + nome + "]";
 	}
 	
+	@ManyToMany
+	  @JoinTable(
+			  name = "Biblioteca_Livro", 
+			  joinColumns = @JoinColumn(name = "Biblioteca_id"),
+			  inverseJoinColumns = @JoinColumn(name = "Livro_id"))
+			  private Set<Livro> livros;
 	
 }

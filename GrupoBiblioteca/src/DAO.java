@@ -30,11 +30,13 @@ public class DAO<E extends Identificavel> {
 		em.close();
 	}
 	
-	public E find(Class<E> classe,Long id) {
+	public E find(Class<E> classe,String nome) {
 		EntityManager em = factory.createEntityManager();
-		E e = em.find(classe, id);
+		E e = em.find(classe, nome);
 		em.close();
 		return e;
 	}
+
+
 	
 }

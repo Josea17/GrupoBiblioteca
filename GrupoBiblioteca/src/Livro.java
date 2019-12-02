@@ -1,5 +1,11 @@
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Livro implements Identificavel{
@@ -88,6 +94,29 @@ public class Livro implements Identificavel{
 	}
 	
 	
+	@ManyToMany
+	  @JoinTable(
+			  name = "Livro_GrupoEstudo", 
+			  joinColumns = @JoinColumn(name = "Livro_id"),
+			  inverseJoinColumns = @JoinColumn(name = "Grupoestudo_id"))
+			  private Set<GrupoEstudo> grupodeestudos;
 	
+	@ManyToOne
+	 @JoinColumn(name = "id_aluno")
+	 private Aluno aluno;
+	
+	@ManyToMany
+	  @JoinTable(
+			  name = "Livro_Biblioteca", 
+			  joinColumns = @JoinColumn(name = "Livro_id"),
+			  inverseJoinColumns = @JoinColumn(name = "Biblioteca_id"))
+			  private Set<Biblioteca> bibliotecas;
+	
+	@ManyToMany
+	  @JoinTable(
+			  name = "Livro_Materia", 
+			  joinColumns = @JoinColumn(name = "Livro_id"),
+			  inverseJoinColumns = @JoinColumn(name = "Materia_id"))
+			  private Set<Materia> materias;
 	
 }

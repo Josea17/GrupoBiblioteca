@@ -1,5 +1,11 @@
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Aluno implements Identificavel {
@@ -72,6 +78,14 @@ public class Aluno implements Identificavel {
 		return true;
 	}
 	
-	
+	@ManyToMany
+	  @JoinTable(
+			  name = "Aluno_GrupoEstudo", 
+			  joinColumns = @JoinColumn(name = "Aluno_id"),
+			  inverseJoinColumns = @JoinColumn(name = "Grupoestudo_id"))
+			  private Set<GrupoEstudo> grupodeestudos;
  
+	 @OneToMany(mappedBy = "aluno" )
+	 private Set<Livro> livros;
+	
 }

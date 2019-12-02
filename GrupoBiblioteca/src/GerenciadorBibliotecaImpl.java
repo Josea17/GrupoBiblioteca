@@ -84,9 +84,8 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 	}
 
 	@Override
-	public Livro pesquisarLivro(Long id, String titulo, String autor, int isbn, int data_lancamento)
-			throws IdInvalidoException, TituloInvalidoException, NomeInvalidoException, IsbnInvalidoException,
-			AnoLancamentoInvalidoException {
+	public Livro pesquisarLivro(Long id)
+			throws IdInvalidoException {
 		Livro livro = new Livro();
 		livro.getAnoLancamento();
 		livro.getAutor();
@@ -94,7 +93,7 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 		livro.getTitulo();
 		livro.getIsbn();
 		DAO<Livro> dao = new DAO<Livro>();
-		dao.save(livro);
+		dao.find(null, id,);
 		return livro;
 	}
 
@@ -110,6 +109,6 @@ public class GerenciadorBibliotecaImpl implements GerenciadorBlibioteca {
 		dao.save(grupo);
 		return grupo;
 	}
-//jnhfkjdsnjngf
+
 
 }
